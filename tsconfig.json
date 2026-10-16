@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    /* Output */
+    "target": "ES2022",               /* Compile to modern JS that Node 22 understands natively */
+    "module": "NodeNext",             /* Use Node's native ESM module resolution */
+    "moduleResolution": "NodeNext",   /* Required when module is NodeNext */
+    "outDir": "dist",                 /* Emit compiled .js files into the dist/ folder */
+
+    /* Type checking */
+    "strict": true,                   /* Enable all strict type-checking rules */
+    "esModuleInterop": true,          /* Allow default imports from CommonJS modules */
+    "skipLibCheck": true,             /* Skip type-checking of .d.ts files in node_modules */
+
+    /* Source */
+    "rootDir": "src"                  /* Only compile files inside src/ */
+  },
+  "include": ["src/**/*.ts"],         /* Compile all .ts files under src/ */
+  "exclude": ["node_modules", "dist"] /* Ignore dependencies and previous build output */
+}

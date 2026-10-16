@@ -1,0 +1,32 @@
+{
+  "name": "multi-agent-typescript",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.1"
+  },
+  "scripts": {
+    "dev": "npm run build && node --watch dist/main_07_02.js",
+    "start": "npm run build && node dist/main_07_02.js",
+    "build": "node ./node_modules/typescript/bin/tsc",
+    "typecheck": "node ./node_modules/typescript/bin/tsc --noEmit",
+    "db:inspect": "node -e \"const { DatabaseSync } = require('node:sqlite'); const db = new DatabaseSync('data/cornwall_hotels.db'); console.log('\\n=== HOTELS (Top 5) ==='); console.table(db.prepare('SELECT hotel_id, hotel_name, town, rating FROM hotels LIMIT 5').all()); console.log('\\n=== BNBS (Top 5) ==='); console.table(db.prepare('SELECT bnb_id, bnb_name, town, price_per_room FROM bnbs LIMIT 5').all());\""
+  },
+  "dependencies": {
+    "@langchain/classic": "^1.0.52",
+    "@langchain/core": "^1.2.17",
+    "@langchain/langgraph": "^1.5.0",
+    "@langchain/openai": "^1.6.2",
+    "@langchain/textsplitters": "^1.0.2",
+    "cheerio": "^1.2.0",
+    "dotenv": "^16.6.1",
+    "langchain": "^1.5.16",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# TypeScript build output
+dist/
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# SQLite local database & WAL files
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+
+# OS & Logs
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
